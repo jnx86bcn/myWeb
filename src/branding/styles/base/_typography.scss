@@ -1,0 +1,22 @@
+﻿//LOAD FONT
+@font-face {
+    font-family: 'open_sansregular';
+    src: url("../fonts/OpenSans-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sansbold';
+    src: url("../fonts/OpenSans-Bold.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.Regular {
+    font-family: 'open_sansregular', sans-serif !important;
+}
+.Bold {
+    font-family: 'open_sansbold', sans-serif !important;
+}
+

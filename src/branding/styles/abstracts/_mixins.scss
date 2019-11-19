@@ -1,0 +1,174 @@
+﻿//============================================================
+//
+// Images responsive
+//
+//============================================================
+@mixin magicalRatio($width, $height) {
+    height: 0px;
+    padding-top: $height/$width * 100%;
+}
+
+//============================================================
+//
+// Text overflow
+// Requires inline-block or block for proper styling
+//
+//============================================================
+@mixin text-overflow() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+//============================================================
+//
+// xCenterElement
+//
+// Horitzontal centering
+//
+//============================================================
+@mixin xCenterElement {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+//============================================================
+//
+// Mixins for setting size
+//
+//============================================================
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin fullSize() {
+    width: 100%;
+    height: 100%;
+}
+
+//============================================================
+//
+// Mixins for setting position
+//
+//============================================================
+@mixin absoluteTL($t: 0, $l: 0) {
+    position: absolute;
+    top: $t;
+    left: $l;
+}
+
+@mixin absoluteBL($b: 0, $l: 0) {
+    position: absolute;
+    bottom: $b;
+    left: $l;
+}
+
+@mixin absoluteTR($t: 0, $r: 0) {
+    position: absolute;
+    top: $t;
+    right: $r;
+}
+
+@mixin fixedTL($t: 0, $l: 0) {
+    position: fixed;
+    top: $t;
+    left: $l;
+}
+
+@mixin fixedTR($t: 0, $r: 0) {
+    position: fixed;
+    top: $t;
+    right: $r;
+}
+
+@mixin relativeTL($t: 0, $l: 0) {
+    position: relative;
+    top: $t;
+    left: $l;
+}
+
+@mixin relativeBL($b: 0, $l: 0) {
+    position: relative;
+    bottom: $b;
+    left: $l;
+}
+
+@mixin absoluteAll {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+//============================================================
+//
+// Position absolute center
+//
+//============================================================
+
+@mixin centerer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+//============================================================
+//
+// Mixins background related
+//
+//============================================================
+//$image-path: '../img' !default;
+$fallback-extension: 'png' !default;
+$retina-suffix: '@2x';
+@mixin background-image-svg($name, $size:false) {
+    background-image: url(#{$img-uri}/#{$name}.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    @if($size) {
+        background-size: $size;
+    }
+    .no-svg & {
+        background-image: url(#{$img-uri}/#{$name}.#{$fallback-extension});
+        @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+            background-image: url(#{$img-uri}/#{$name}#{$retina-suffix}.#{$fallback-extension});
+        }
+    }
+}
+
+@mixin fullBackground {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+@mixin topBackground {
+    background-repeat: no-repeat;
+    background-position: center top;
+    @include background-size(cover);
+}
+
+@mixin fullCenterBackground {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+@mixin svgBackground($url, $fallbackURL) {
+    background-image : url('#{$fallbackURL}');
+    background-image : none,
+    url('#{$url}');
+}
+
+//============================================================
+//
+// Border radius
+//
+//===========================================================
+@mixin rounded($radius: 0.5em) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}

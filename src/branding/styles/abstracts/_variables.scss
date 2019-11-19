@@ -1,0 +1,41 @@
+﻿//----------------------------------------
+// Colors 
+//----------------------------------------
+$pureWhite: #FFFFFF;
+$Wild-Sand: #F6F6F6;//Grey bg
+$Pink-Swan:#BEB3BA;
+$London-Hue:#D2BBD3;
+$Mountbatten-Pink:#91798A;
+$Botticelli:#DCE6EE;
+$Blackberry: #430042; //Primary brand color
+$Shadow-Green: #9FCCC2; //Call to Action buttons
+$Riptide:#179A67;
+$Strikemaster:#8E668E; //Secondary buttons
+$Fiord: #3A3E66;
+$Loblolly:#C4CED6;
+$pureBlack: #000000;
+$Pale-Slate:#D3C9D0;
+$Red-Orange:#FF4136;//alert color
+$LaPalma:#359E15;
+$bright_cyan: #ED7B47;
+
+//Configs
+$brand-info: $London-Hue; //hover on calendar
+$approved: $Riptide; //Approved holidays color
+$current: $Fiord; //Current day / month
+$public-holidays: $Mountbatten-Pink; //Public holiday color
+$weekNumber: $Botticelli; //Number of the week color
+$rejected: $Loblolly; // Non approved
+$weekend: lighten( $Pale-Slate, 10%); // Weekend color
+//$pending: lighten( $dull_orange, 80%); // Pending color
+$pending: $bright_cyan;
+$others: #EF6F6C;
+$othersPending: #FCD7BC;
+
+
+//variables Gray
+$gray-dark: lighten($pureBlack, 20%); // #333
+$gray-light: lighten($pureBlack, 46.7%); // #777
+$gray-lighter: lighten($pureBlack, 93.5%); // #eee
+
+
